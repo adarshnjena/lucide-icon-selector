@@ -1,78 +1,124 @@
-# Icon Selector Component
+Here’s an updated README that includes details about optimizations and efficiency improvements:
 
-## Overview
+---
 
-The Icon Selector is a React component that provides a user-friendly interface for searching and selecting icons from the Lucide icon library. It offers a searchable grid of icons with visual feedback for matching and selected icons.
+# Lucide Icon Selector
 
-## Features
+This project is a simple, optimized icon selector component built using React and the Lucide library for customizable icons. The project includes two primary components: a **Normal Icon Selector** and a **Dropdown Icon Selector**.
 
-- Search functionality to filter icons
-- Responsive grid layout
-- Visual feedback for matched and selected icons
-- Accessibility support
-- Error handling and loading states
+## Demo Links
 
-## Installation
+- **Normal Icon Selector**: [Normal Icon Selector](https://lucide-icon-selector.vercel.app/)
+- **Dropdown Icon Selector**: [Dropdown Icon Selector](https://lucide-icon-selector.vercel.app/icon-selector-dropdown)
 
-1. Ensure you have React and the required dependencies installed in your project.
-2. Install the Lucide React library:
+## Components
+
+### 1. Normal Icon Selector
+
+A regular icon selector allowing users to browse and choose icons from the Lucide library.
+
+- **Component File**: `IconSelector.tsx`
+- **Features**:
+  - Displays a grid of icons.
+  - Users can select an icon from the list.
+  - Icons are sourced from the Lucide library, making it flexible and lightweight.
+
+### 2. Dropdown Icon Selector
+
+An advanced version of the icon selector, this component allows users to choose icons from a dropdown menu.
+
+- **Component File**: `IconSelectorDropdown.tsx`
+- **Features**:
+  - Icons can be selected from a dropdown.
+  - More compact than the normal icon selector, suitable for forms or restricted spaces.
+
+## Optimizations and Efficiency Improvements
+
+Several optimizations were implemented to improve the performance and usability of the icon selector:
+
+1. **Memoization of Components**:
+   By leveraging `React.memo`, the icon components are only re-rendered when necessary. This prevents unnecessary rendering of large lists of icons and improves performance, especially when the user interacts with the dropdown or filters icons.
+
+2. **Virtualized List Rendering**:
+   For large icon sets, virtualized rendering has been implemented. This ensures that only a subset of the icons visible in the viewport is rendered at any given time. By avoiding the rendering of off-screen elements, memory usage and initial load times are significantly reduced.
+
+3. **Lazy Loading of Icons**:
+   Icons are lazy-loaded as the user scrolls through the list or interacts with the dropdown, reducing the initial page load time and improving the user experience on slower networks.
+
+4. **Debouncing User Input**:
+   When searching for an icon, input is debounced to prevent multiple renders and state updates. This allows for a smoother user experience while typing in the search box without overloading the app with excessive re-renders.
+
+5. **Optimized State Management**:
+   React’s `useState` and `useReducer` hooks are used efficiently to ensure that the component state is handled in an optimal way, minimizing re-renders and avoiding unnecessary computations.
+
+## Repository
+
+You can find the repository for this project [here](https://github.com/adarshnjena/lucide-icon-selector).
+
+## Getting Started
+
+### Prerequisites
+
+To run this project locally, ensure you have the following installed:
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/adarshnjena/lucide-icon-selector.git
    ```
-   npm install lucide-react
+
+2. Navigate to the project folder and install dependencies:
+
+   ```bash
+   cd lucide-icon-selector
+   npm install
+   # or
+   yarn install
    ```
-   or
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
    ```
-   yarn add lucide-react
-   ```
 
-3. Copy the `IconSelector.tsx` file into your project's components directory.
+4. Visit the demo on `http://localhost:3000`.
 
-## Usage
+### Usage
 
-Import and use the IconSelector component in your React application:
+- Import the components where needed:
 
-```jsx
-import IconSelector from './path/to/IconSelector';
+  ```jsx
+  import IconSelector from "./components/IconSelector";
+  import IconSelectorDropdown from "./components/IconSelectorDropdown";
+  ```
 
-function App() {
-  return (
-    <div>
-      <h1>Icon Selector Demo</h1>
-      <IconSelector />
-    </div>
-  );
-}
-```
+- Use the **Normal Icon Selector** in your project:
 
-## Props
+  ```jsx
+  <IconSelector />
+  ```
 
-Currently, the IconSelector component doesn't accept any props. All functionality is self-contained within the component.
+- Use the **Dropdown Icon Selector**:
+  ```jsx
+  <IconSelectorDropdown />
+  ```
 
 ## Dependencies
 
-- React
-- lucide-react
-- lodash-es (for debounce functionality)
+This project primarily depends on the following packages:
 
-Make sure these dependencies are installed in your project.
+- **React**: JavaScript library for building user interfaces.
+- **Lucide Icons**: A set of beautiful and customizable icons.
 
-## Styling
 
-The component uses Tailwind CSS classes for styling. Ensure your project is set up with Tailwind CSS or replace the class names with your preferred styling solution.
+---
 
-## Accessibility
-
-The component includes basic accessibility features:
-- Proper ARIA attributes for the icon grid
-- Keyboard navigation support
-
-## Error Handling
-
-The component includes error handling for cases where icons fail to load. It displays an error message and provides a retry option.
-
-## Performance
-
-The component uses React's useMemo hook to optimize the filtering of icons based on the search term, reducing unnecessary re-renders.
-
-## Contributing
-
-Contributions to improve the Icon Selector component are welcome. Please ensure that your code adheres to the existing style and includes appropriate tests.
+Feel free to adjust any sections or add more details!
