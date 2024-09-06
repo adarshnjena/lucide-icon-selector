@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Icon Selector Component
 
-## Getting Started
+## Overview
 
-First, run the development server:
+The Icon Selector is a React component that provides a user-friendly interface for searching and selecting icons from the Lucide icon library. It offers a searchable grid of icons with visual feedback for matching and selected icons.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+- Search functionality to filter icons
+- Responsive grid layout
+- Visual feedback for matched and selected icons
+- Accessibility support
+- Error handling and loading states
+
+## Installation
+
+1. Ensure you have React and the required dependencies installed in your project.
+2. Install the Lucide React library:
+   ```
+   npm install lucide-react
+   ```
+   or
+   ```
+   yarn add lucide-react
+   ```
+
+3. Copy the `IconSelector.tsx` file into your project's components directory.
+
+## Usage
+
+Import and use the IconSelector component in your React application:
+
+```jsx
+import IconSelector from './path/to/IconSelector';
+
+function App() {
+  return (
+    <div>
+      <h1>Icon Selector Demo</h1>
+      <IconSelector />
+    </div>
+  );
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Props
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Currently, the IconSelector component doesn't accept any props. All functionality is self-contained within the component.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Dependencies
 
-## Learn More
+- React
+- lucide-react
+- lodash-es (for debounce functionality)
 
-To learn more about Next.js, take a look at the following resources:
+Make sure these dependencies are installed in your project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The component uses Tailwind CSS classes for styling. Ensure your project is set up with Tailwind CSS or replace the class names with your preferred styling solution.
 
-## Deploy on Vercel
+## Accessibility
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The component includes basic accessibility features:
+- Proper ARIA attributes for the icon grid
+- Keyboard navigation support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Error Handling
+
+The component includes error handling for cases where icons fail to load. It displays an error message and provides a retry option.
+
+## Performance
+
+The component uses React's useMemo hook to optimize the filtering of icons based on the search term, reducing unnecessary re-renders.
+
+## Contributing
+
+Contributions to improve the Icon Selector component are welcome. Please ensure that your code adheres to the existing style and includes appropriate tests.
+
+## License
+
+[Include your chosen license here]
+
+## Contact
+
+[Your contact information or link to issues page]

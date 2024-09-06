@@ -25,7 +25,9 @@ const IconSelector: React.FC = () => {
       setIconList(iconNames);
     } catch (err) {
       console.error("Error in useEffect:", err);
-      setError(err instanceof Error ? err.message : "An unknown error occurred");
+      setError(
+        err instanceof Error ? err.message : "An unknown error occurred"
+      );
     }
   }, []);
 
@@ -56,7 +58,11 @@ const IconSelector: React.FC = () => {
   }
 
   if (iconList.length === 0) {
-    return <div className="p-4">Loading icons... (Icon count: {Object.keys(icons).length})</div>;
+    return (
+      <div className="p-4">
+        Loading icons... (Icon count: {Object.keys(icons).length})
+      </div>
+    );
   }
 
   return (
@@ -77,7 +83,7 @@ const IconSelector: React.FC = () => {
             <div
               key={iconName}
               className={`p-2 border rounded cursor-pointer transition-all duration-300 ${
-                isMatched ? "bg-green-100 scale-105" : "opacity-50"
+                isMatched ? "bg-violet-100 scale-105" : "opacity-50"
               } ${selectedIcon === iconName ? "ring-2 ring-blue-500" : ""}`}
               onClick={() => handleIconClick(iconName)}
             >
