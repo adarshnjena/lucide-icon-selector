@@ -76,11 +76,3 @@ The component uses React's useMemo hook to optimize the filtering of icons based
 ## Contributing
 
 Contributions to improve the Icon Selector component are welcome. Please ensure that your code adheres to the existing style and includes appropriate tests.
-
-## License
-
-[Include your chosen license here]
-
-## Contact
-
-[Your contact information or link to issues page]
